@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<!--
+  CIT 384 - Project 1
+  CNC Milling page
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>CNC Milling</title>
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <header role="banner">
+      <h1>CNC Machining for Aerospace</h1>
+      <h2>CNC Milling</h2>
+      <nav role="navigation">
+        <ul>
+          <li><a href="index.html" title="Introduction to CNC machining">Introduction to CNC</a></li>
+          <li><a href="milling.html" title="CNC milling" class="current">CNC milling</a></li>
+          <li><a href="turning.html" title="CNC turning">CNC turning (lathe)</a></li>
+          <li><a href="fiveaxis.html" title="5-axis machining">5-axis machining</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main role="main">
+      <article role="article">
+        <header>
+          <p>
+            <img
+              src="images/cnc-mill.jpg"
+              alt="A vertical CNC milling machine with its doors open"
+              width="320"
+              height="320"
+              class="floatRight"
+            />Milling is the most common type of CNC machining, and it is the
+            process most people picture when they think of a CNC machine. A
+            <b>mill</b> uses a rotating cutting tool with several sharp edges
+            to remove material from a part that is clamped to the machine
+            table. By moving the tool and the table along the <b>X</b>,
+            <b>Y</b>, and <b>Z</b> axes, a mill can create flat faces, pockets,
+            slots, holes, and complex 3D shapes. In aerospace, milling is used
+            to make a huge number of structural parts, from small brackets to
+            wing spars that are several feet long.
+          </p>
+        </header>
+        <section>
+          <h3>How milling works</h3>
+          <p>
+            On a typical <b>vertical machining center</b> (VMC), the spindle
+            points straight down and holds the cutting tool. The table moves
+            the part left and right (X) and forward and back (Y), while the
+            spindle moves up and down (Z). A <b>horizontal machining center</b>
+            (HMC) has the spindle on its side instead, which helps chips fall
+            away from the part and makes it easier to work on several sides
+            of a part using a rotating table.
+          </p>
+          <p>
+            Two numbers control almost everything about a milling cut. The
+            <b>spindle speed</b> is how fast the tool spins, measured in
+            revolutions per minute (RPM). The <b>feed rate</b> is how fast the
+            tool moves through the material, usually in inches or millimeters
+            per minute. If these are set correctly, each tooth takes a small,
+            clean chip and the tool lasts a long time. If they are set wrong,
+            the tool can rub, chatter, overheat, or even break.
+          </p>
+        </section>
+        <section>
+          <h3>Common milling operations</h3>
+          <ul>
+            <li>
+              <b>Face milling</b>: Cutting a large flat surface across the top
+              of a part, usually as the first operation
+            </li>
+            <li>
+              <b>Pocketing</b>: Clearing out material inside a closed boundary
+              to create a recess, like the lightening pockets in a wing rib
+            </li>
+            <li>
+              <b>Contouring</b>: Following the outside or inside profile of a
+              part to cut its final shape
+            </li>
+            <li>
+              <b>Slotting</b>: Cutting a narrow channel the full width of the
+              tool
+            </li>
+            <li>
+              <b>Drilling and tapping</b>: Making holes and cutting threads
+              into them for fasteners
+            </li>
+            <li>
+              <b>3D surfacing</b>: Using a ball-end mill to take many small
+              passes over a curved surface
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3>Climb vs. conventional milling</h3>
+          <p>
+            The direction the tool travels compared to the way it is spinning
+            makes a big difference in how the cut behaves.
+          </p>
+          <h4>Climb milling</h4>
+          <p>
+            In climb milling, the tool &ldquo;climbs&rdquo; into the material,
+            so each tooth starts with a thick chip and ends with a thin one.
+            This pushes heat into the chip instead of the part, leaves a better
+            surface finish, and is easier on the tool. On modern CNC machines
+            with tight, backlash-free ball screws, climb milling is almost
+            always the preferred choice.
+          </p>
+          <h4>Conventional milling</h4>
+          <p>
+            In conventional milling, each tooth starts with a thin chip and
+            ends with a thick one. The tooth rubs a little before it starts
+            cutting, which creates more heat and tool wear. It is still useful
+            on older manual machines, or when cutting through a hard outer
+            layer like the scale on a casting.
+          </p>
+        </section>
+        <section>
+          <h3>Milling in aerospace</h3>
+          <p>
+            <img
+              src="images/wing-rib.jpg"
+              alt="A machined aluminum wing rib with lightening pockets"
+              width="300"
+              height="225"
+              class="floatLeft"
+            />Older aircraft were built from hundreds of small sheet metal
+            pieces riveted together. Today, many of those assemblies are
+            replaced by <b>monolithic parts</b>, which are machined out of a
+            single thick plate of aluminum. A wing rib, spar, or fuselage
+            bulkhead might start as a plate weighing hundreds of pounds and
+            end up as a light, pocketed part with thin walls and floors. Fewer
+            parts means fewer fasteners, less assembly time, and a lighter
+            airplane.
+          </p>
+          <p>
+            Machining these parts takes special techniques. Aluminum is cut
+            using <b>high-speed machining</b>, where the spindle can spin at
+            20,000 RPM or more so large amounts of material can be removed
+            quickly. The thin walls can vibrate and bend, so programmers leave
+            extra material to support the part until the final passes.
+            Titanium is the opposite. It has to be cut slowly, with lots of
+            coolant, using toolpaths that keep the tool engaged evenly so it
+            doesn&rsquo;t overheat.
+          </p>
+          <aside role="complementary">
+            <h4>Shop tip: chatter</h4>
+            <p>
+              <b>Chatter</b> is a vibration between the tool and the part that
+              leaves a wavy pattern on the surface and makes a loud screeching
+              noise. It is one of the biggest problems when milling thin
+              aerospace walls. Using a shorter tool, changing the spindle
+              speed, or adding support under the part are all common ways to
+              get rid of it.
+            </p>
+          </aside>
+        </section>
+        <section>
+          <h3>Milling cutters</h3>
+          <ul>
+            <li>
+              <b>End mills</b>
+              <ul>
+                <li>
+                  The most common milling tool. Cuts on both the sides and the
+                  bottom, and is used for pockets, slots, and profiles.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Ball-end mills</b>
+              <ul>
+                <li>
+                  Have a rounded tip for cutting 3D curved surfaces and
+                  fillets.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Face mills</b>
+              <ul>
+                <li>
+                  Large diameter cutters with replaceable carbide inserts,
+                  used to flatten big surfaces quickly.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Drills and taps</b>
+              <ul>
+                <li>
+                  Used to make the thousands of fastener holes found on an
+                  aircraft structure.
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+      </article>
+    </main>
+    <footer role="contentinfo">
+      <p>
+        <a href="https://www.csun.edu" title="CSUN Website" target="_blank" rel="noopener noreferrer">CSUN</a>
+        18111 Nordhoff St Northridge, CA 91330
+      </p>
+      <p>CIT 384 &ndash; Project 1</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<!--
+  CIT 384 - Project 1
+  5-Axis Machining page
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>5-Axis Machining</title>
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <header role="banner">
+      <h1>CNC Machining for Aerospace</h1>
+      <h2>5-Axis Machining</h2>
+      <nav role="navigation">
+        <ul>
+          <li><a href="index.html" title="Introduction to CNC machining">Introduction to CNC</a></li>
+          <li><a href="milling.html" title="CNC milling">CNC milling</a></li>
+          <li><a href="turning.html" title="CNC turning">CNC turning (lathe)</a></li>
+          <li><a href="fiveaxis.html" title="5-axis machining" class="current">5-axis machining</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main role="main">
+      <article role="article">
+        <header>
+          <p>
+            <img
+              src="images/five-axis.jpg"
+              alt="A 5-axis machining center with a tilting trunnion table"
+              width="450"
+              height="400"
+              class="floatRight"
+            />A regular CNC mill can only move its tool in three straight
+            lines: X, Y, and Z. That works for a lot of parts, but anything
+            with curved surfaces or features on many different angles has to
+            be flipped and re-clamped several times. <b>5-axis machining</b>
+            adds two rotary axes that tilt and spin either the part or the
+            tool. This lets the cutter approach the part from almost any
+            direction, all in a single setup. For aerospace parts like turbine
+            blades and impellers, 5-axis machining isn&rsquo;t just helpful,
+            it is the only practical way to make them.
+          </p>
+        </header>
+        <section>
+          <h3>Understanding the axes</h3>
+          <p>
+            The three linear axes are the same ones found on any mill. The
+            two extra axes are rotary, and each one is named after the linear
+            axis it rotates around.
+          </p>
+          <ul>
+            <li><b>X, Y, Z</b>: The three straight-line axes</li>
+            <li><b>A axis</b>: Rotates around the X axis</li>
+            <li><b>B axis</b>: Rotates around the Y axis</li>
+            <li><b>C axis</b>: Rotates around the Z axis</li>
+          </ul>
+          <p>
+            A 5-axis machine uses two of the three rotary axes. The most common
+            combinations are <b>A and C</b> or <b>B and C</b>, depending on how
+            the machine is built.
+          </p>
+        </section>
+        <section>
+          <h3>Machine configurations</h3>
+          <h4>Table/table (trunnion)</h4>
+          <p>
+            Both rotary axes are built into the table. The part sits on a
+            round platter that spins, and that platter sits in a cradle that
+            tilts. This is the most common design for small to medium parts
+            because the spindle stays simple and stiff.
+          </p>
+          <h4>Head/head</h4>
+          <p>
+            Both rotary axes are in the spindle head, and the part stays still
+            on a flat table. This is used for very large and heavy parts like
+            wing skins and fuselage frames that would be too big to tilt.
+          </p>
+          <h4>Head/table</h4>
+          <p>
+            One rotary axis is in the head and the other is in the table. It
+            is a middle ground that works well for long parts that need to be
+            rotated, like spars.
+          </p>
+        </section>
+        <section>
+          <h3>3+2 vs. simultaneous 5-axis</h3>
+          <p>
+            Not every 5-axis job moves all five axes at once. In
+            <b>3+2 machining</b>, also called positional machining, the two
+            rotary axes lock the part at an angle and then the machine cuts
+            using only X, Y, and Z. This is great for drilling holes or milling
+            pockets on angled faces.
+          </p>
+          <p>
+            In <b>simultaneous 5-axis</b> machining, all five axes move at the
+            same time while the tool is cutting. This keeps the tool at the
+            best angle to a curved surface the whole time and is needed for
+            shapes like airfoils. It also takes more powerful CAM software and
+            careful simulation, because the machine is constantly swinging
+            around the part.
+          </p>
+        </section>
+        <section>
+          <h3>5-axis in aerospace</h3>
+          <p>
+            <img
+              src="images/blisk.jpg"
+              alt="A titanium blisk machined on a 5-axis machine"
+              width="500"
+              height="500"
+              class="floatLeft"
+            />One of the best examples of 5-axis machining is the
+            <b>blisk</b>, short for &ldquo;bladed disk.&rdquo; In older jet
+            engines, each compressor blade was made separately and slotted
+            into a disk. A blisk is one solid part with all the blades machined
+            out of a single forging. This removes the joints, saves weight, and
+            makes the engine more efficient. Cutting the thin, twisted blades
+            so close together is only possible because the tool can tilt to
+            fit between them.
+          </p>
+          <p>
+            5-axis machines are also used for <b>impellers</b>, individual
+            <b>turbine blades</b>, and structural parts that have features on
+            compound angles. Because the part is finished in one setup, there
+            is less chance of error from re-clamping it, which helps hold the
+            tight tolerances aerospace parts require.
+          </p>
+          <aside role="complementary">
+            <h4>The downside</h4>
+            <p>
+              5-axis machines cost a lot more than 3-axis machines, and they
+              take more skill to program and run. Programmers need to check
+              every toolpath in a simulation first, because the rotating table
+              or head could crash into the part, the fixture, or the machine
+              itself. For simple parts, a 3-axis mill is often still the better
+              choice.
+            </p>
+          </aside>
+        </section>
+        <section>
+          <h3>Further reading</h3>
+          <ul>
+            <li>
+              <a
+                href="https://en.wikipedia.org/wiki/Numerical_control"
+                title="Numerical control on Wikipedia"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><b>Numerical control</b></a
+              >
+              <ul>
+                <li>
+                  A good overview of the history of NC and CNC machines.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a
+                href="https://en.wikipedia.org/wiki/Multiaxis_machining"
+                title="Multiaxis machining on Wikipedia"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><b>Multiaxis machining</b></a
+              >
+              <ul>
+                <li>More detail on 4-axis and 5-axis machine designs.</li>
+              </ul>
+            </li>
+            <li>
+              <a
+                href="https://en.wikipedia.org/wiki/Blisk"
+                title="Blisk on Wikipedia"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><b>Blisk</b></a
+              >
+              <ul>
+                <li>How bladed disks are made and why engines use them.</li>
+              </ul>
+            </li>
+            <li>
+              <a
+                href="https://en.wikipedia.org/wiki/AS9100"
+                title="AS9100 on Wikipedia"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><b>AS9100</b></a
+              >
+              <ul>
+                <li>The quality standard used by aerospace machine shops.</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3>Request a 5-axis quote</h3>
+          <p>
+            Have a part that needs 5-axis work? Fill out the form below with
+            some details about the job.
+          </p>
+          <!--
+            MDN EXPLORATION - ELEMENT: <input>
+            What: <input> creates an interactive control that lets the user
+            enter data. The type attribute decides what kind of control it
+            is (text box, email, number, color picker, button, etc.).
+            Where: Every field in this quote form, including the submit
+            button at the bottom.
+            How: I use type="text" for the name and part number,
+            type="email" for the email, type="number" for the quantity,
+            type="color" for the finish color, and type="submit" for the
+            button.
+
+            MDN EXPLORATION - ATTRIBUTE: name
+            What: The name attribute gives a form control a name. When the
+            form is submitted, the data is sent as name=value pairs.
+            Where: On every <input> and the <textarea> in this form.
+            How: Names like "customerName" and "partDescription" label each
+            piece of data so it can be identified after the form is sent.
+            (I also use name on the <slot> element in index.html.)
+          -->
+          <form action="#" method="get" class="quoteForm">
+            <p>
+              <label for="customerName">Name</label>
+              <input type="text" id="customerName" name="customerName" required />
+            </p>
+            <p>
+              <label for="customerEmail">Email</label>
+              <input type="email" id="customerEmail" name="customerEmail" required />
+            </p>
+            <p>
+              <label for="partNumber">Part number</label>
+              <input type="text" id="partNumber" name="partNumber" />
+            </p>
+            <p>
+              <label for="quantity">Quantity</label>
+              <input type="number" id="quantity" name="quantity" min="1" value="1" />
+            </p>
+            <!--
+              MDN EXPLORATION - ATTRIBUTE: alpha
+              What: alpha is a boolean attribute for <input type="color">.
+              When it is added, the color picker also lets the user pick an
+              opacity (alpha channel) along with the color.
+              Where: On the "Anodize color" input below.
+              How: Customers pick the dye color for anodized aluminum parts,
+              and the opacity lets them ask for a lighter, see-through tint.
+              Note: alpha is a newer attribute, so browsers that don't
+              support it yet just show the normal color picker.
+            -->
+            <p>
+              <label for="anodizeColor">Anodize color</label>
+              <input type="color" id="anodizeColor" name="anodizeColor" value="#1e5aa8" alpha />
+            </p>
+            <!--
+              MDN EXPLORATION - ELEMENT: <textarea>
+              What: <textarea> is a multi-line plain text box. Unlike a text
+              <input>, it lets the user type several lines and paragraphs.
+              Where: The "Part description" field below.
+              How: Customers use it to describe the material, tolerances,
+              and anything else about their part.
+
+              MDN EXPLORATION - ATTRIBUTE: cols
+              What: cols sets the visible width of a <textarea> measured in
+              average character widths. The default is 20.
+              Where: On the <textarea> below (cols="60").
+              How: I set it to 60 so the box is wide enough to type a full
+              sentence without wrapping too early. I did not set a CSS width
+              on the textarea so that cols controls its size.
+            -->
+            <p>
+              <label for="partDescription">Part description</label>
+              <textarea id="partDescription" name="partDescription" cols="60" rows="6"></textarea>
+            </p>
+            <p>
+              <input type="submit" value="Send request" />
+            </p>
+          </form>
+        </section>
+      </article>
+    </main>
+    <footer role="contentinfo">
+      <p>
+        <a href="https://www.csun.edu" title="CSUN Website" target="_blank" rel="noopener noreferrer">CSUN</a>
+        18111 Nordhoff St Northridge, CA 91330
+      </p>
+      <p>CIT 384 &ndash; Project 1</p>
+    </footer>
+  </body>
+</html>

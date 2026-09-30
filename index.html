@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<!--
+  CIT 384 - Project 1
+  Home page: Introduction to CNC Machining
+
+  MDN EXPLORATION SUMMARY (elements and attributes not covered in class)
+  Elements:
+    1. <slot>     - index.html, "Born in the aerospace industry" fact card
+    2. <input>    - fiveaxis.html, "Request a 5-axis quote" form
+    3. <textarea> - fiveaxis.html, "Request a 5-axis quote" form
+  Attributes:
+    1. name  - index.html (on the <slot>) and fiveaxis.html (on every form field)
+    2. cols  - fiveaxis.html (on the <textarea>)
+    3. alpha - fiveaxis.html (on the color <input>)
+  Each one also has its own comment next to where it is used.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Introduction to CNC Machining</title>
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <header role="banner">
+      <h1>CNC Machining for Aerospace</h1>
+      <h2>Introduction to CNC Machining</h2>
+      <nav role="navigation">
+        <ul>
+          <li><a href="index.html" title="Introduction to CNC machining" class="current">Introduction to CNC</a></li>
+          <li><a href="milling.html" title="CNC milling">CNC milling</a></li>
+          <li><a href="turning.html" title="CNC turning">CNC turning (lathe)</a></li>
+          <li><a href="fiveaxis.html" title="5-axis machining">5-axis machining</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main role="main">
+      <article role="article">
+        <header>
+          <p>
+            <img
+              src="images/cnc-machine.jpg"
+              alt="A CNC machining center cutting an aluminum part"
+              width="320"
+              height="240"
+              class="floatRight"
+            />CNC, or <b>Computer Numerical Control</b>, is the process of using
+            a computer to control the movement of a machine tool. Instead of a
+            machinist turning handwheels to guide a cutter, the machine reads a
+            program of coordinates and commands and moves the tool on its own.
+            CNC machining is a <em>subtractive</em> process, meaning that the
+            machine starts with a solid block, bar, or plate of material and
+            removes everything that isn&rsquo;t part of the finished design.
+            Because every move is controlled by the program, a CNC machine can
+            make the same part hundreds of times with almost no variation
+            between them. That kind of repeatability is exactly what the
+            aerospace industry needs, where a part that is off by the thickness
+            of a sheet of paper can end up as scrap.
+          </p>
+        </header>
+        <section>
+          <h3>How CNC machining works</h3>
+          <p>
+            Every CNC part starts as a 3D model in a <b>CAD</b> (Computer-Aided
+            Design) program. That model is then brought into <b>CAM</b>
+            (Computer-Aided Manufacturing) software, where the programmer picks
+            the cutting tools, decides how the part will be held, and plans the
+            paths that each tool will take. The CAM software then
+            &ldquo;posts&rdquo; those toolpaths into <b>G-code</b>, the
+            language that most CNC machines understand. G-code is made up of
+            simple lines like &ldquo;move to this X, Y, and Z position at this
+            feed rate&rdquo; or &ldquo;turn the spindle on at 8,000 RPM.&rdquo;
+          </p>
+          <p>
+            Once the program is loaded into the machine&rsquo;s controller, the
+            machinist sets up the job. This means loading the right tools,
+            measuring how long each tool is, clamping the raw material in a
+            vise or fixture, and telling the machine exactly where the part is
+            located. After that, the machine runs the program, and the operator
+            checks the first part to make sure every dimension is in tolerance
+            before running the rest of the batch.
+          </p>
+          <p>
+            The two most common types of CNC machines are <b>mills</b> and
+            <b>lathes</b>. On a mill, the cutting tool spins and the part stays
+            still. On a lathe, the part spins and the cutting tool stays still.
+            A <b>5-axis</b> machine takes milling a step further by being able
+            to tilt and rotate the part or the tool, so it can reach almost any
+            surface in a single setup.
+          </p>
+        </section>
+        <section>
+          <h3>History</h3>
+          <p>
+            <img
+              src="images/early-nc-machine.jpg"
+              alt="An early numerically controlled milling machine"
+              width="280"
+              height="210"
+              class="floatLeft"
+            />It might be surprising, but CNC machining was actually born
+            because of airplanes. In the late 1940s, <b>John T. Parsons</b>
+            was building helicopter rotor blades and needed a better way to cut
+            the precise curved templates used to make them. He came up with
+            the idea of using punched cards full of coordinates to guide a
+            machine tool one small step at a time. The <b>U.S. Air Force</b>
+            saw the potential for making aircraft parts and funded the project
+            in 1949.
+          </p>
+          <p>
+            Parsons partnered with the <b>MIT Servomechanisms Laboratory</b>,
+            and in 1952 they showed off the first numerically controlled (NC)
+            milling machine. It read its instructions from punched paper tape.
+            Writing those programs by hand was slow, so MIT went on to create
+            <b>APT</b> (Automatically Programmed Tools), one of the first
+            programming languages made just for machine tools.
+          </p>
+          <p>
+            In the 1970s, cheaper computers replaced the punched tape and
+            &ldquo;NC&rdquo; became &ldquo;CNC.&rdquo; Around the same time,
+            aircraft makers like Dassault started building their own CAD
+            software to design jets on a computer instead of a drafting table.
+            Today, almost every part on a modern airliner or fighter jet has
+            been touched by a CNC machine at some point.
+          </p>
+          <!--
+            MDN EXPLORATION - ELEMENT: <slot>
+            What: <slot> is part of the Web Components technology. It is a
+            placeholder inside a shadow DOM that gets filled in with the
+            content ("light DOM") that is placed inside the host element.
+            Where: This "fact card" in the History section of index.html.
+            How: The <template shadowrootmode="open"> builds a shadow DOM for
+            the factCard div without needing any JavaScript. The template
+            holds the frame and its own styles, and the two slots mark where
+            my heading and paragraph get placed. If no heading is given, the
+            slot shows its fallback text "Did you know?".
+
+            MDN EXPLORATION - ATTRIBUTE: name (on <slot>)
+            What: The name attribute gives a slot a name so content can be
+            sent to that exact slot.
+            Where: On the first <slot> below (name="cardTitle").
+            How: The <h4> uses slot="cardTitle" to go into the named slot,
+            and the <p> has no slot attribute so it goes into the unnamed
+            (default) slot. I also use the name attribute on the form fields
+            in fiveaxis.html.
+          -->
+          <div class="factCard">
+            <template shadowrootmode="open">
+              <style>
+                .frame {
+                  border-left: 6px solid #e8871e;
+                  background-color: #fdf3e7;
+                  padding: 10px 20px;
+                }
+                ::slotted(h4) {
+                  margin: 0 0 5px 0;
+                  color: #0d2b45;
+                }
+              </style>
+              <div class="frame">
+                <slot name="cardTitle"><h4>Did you know?</h4></slot>
+                <slot></slot>
+              </div>
+            </template>
+            <h4 slot="cardTitle">Born in the aerospace industry</h4>
+            <p>
+              The very first numerically controlled machine tool was paid for
+              by the U.S. Air Force. Aerospace has been pushing CNC technology
+              forward ever since, from the first NC mills to modern 5-axis
+              machining centers.
+            </p>
+          </div>
+        </section>
+        <section>
+          <h3>From model to finished part</h3>
+          <ol>
+            <li>
+              <b>Design</b>: An engineer models the part in CAD and adds the
+              dimensions and tolerances it needs to meet
+            </li>
+            <li>
+              <b>Programming</b>: A CNC programmer uses CAM software to pick
+              tools and create toolpaths, then posts the G-code
+            </li>
+            <li>
+              <b>Setup</b>: The machinist loads the tools, fixtures the raw
+              material, and sets the part zero on the machine
+            </li>
+            <li>
+              <b>Machining</b>: The machine runs the program, roughing out
+              most of the material first and then taking finishing passes
+            </li>
+            <li>
+              <b>Inspection</b>: The part is measured with tools like
+              micrometers or a CMM (Coordinate Measuring Machine) to prove it
+              matches the drawing
+            </li>
+          </ol>
+        </section>
+        <section>
+          <h3>Why aerospace depends on CNC</h3>
+          <p>
+            <img
+              src="images/Brackets.jpg"
+              alt="A machined aluminum aircraft bracket"
+              width="300"
+              height="225"
+              class="floatRight"
+            />Aircraft and spacecraft parts have to be <b>strong</b>,
+            <b>light</b>, and <b>exact</b> all at the same time. Many aerospace
+            drawings call for tolerances measured in ten-thousandths of an
+            inch, and some parts have hundreds of features that all have to be
+            right. CNC machines can hold those tolerances all day long, and
+            because every part comes from the same program, the tenth part is
+            the same as the first.
+          </p>
+          <p>
+            Aerospace shops also have to be able to prove their work. Most of
+            them are certified to <b>AS9100</b>, a quality standard made for
+            the aviation, space, and defense industries. Every part needs to
+            be traceable back to the batch of material it came from, the
+            machine it was made on, and the inspection report that approved
+            it.
+          </p>
+          <p>
+            Another thing that makes aerospace machining different is the
+            <b>buy-to-fly ratio</b>. This is the weight of the raw material
+            that was bought compared to the weight of the part that actually
+            flies. For some titanium parts it can be 10:1 or even higher,
+            meaning around 90% of the expensive material ends up as chips on
+            the shop floor.
+          </p>
+          <h4>Common aerospace materials</h4>
+          <ul>
+            <li>
+              <b>Aluminum alloys</b>
+              <ul>
+                <li>
+                  Alloys like 7075 and 2024 are light, strong, and easy to
+                  machine. They are used for wing ribs, spars, brackets, and
+                  fuselage frames.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Titanium (Ti-6Al-4V)</b>
+              <ul>
+                <li>
+                  Stronger than aluminum and handles heat much better, but it
+                  is harder on cutting tools and has to be cut slowly. Found
+                  in landing gear parts, engine mounts, and fasteners.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Nickel superalloys (Inconel 718)</b>
+              <ul>
+                <li>
+                  Keeps its strength at the extreme temperatures inside a jet
+                  engine. It is one of the toughest materials to machine.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Stainless steels (17-4 PH, 15-5 PH)</b>
+              <ul>
+                <li>
+                  Used for fittings, actuators, and parts that need to resist
+                  corrosion.
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3>Explore the processes</h3>
+          <p>
+            Each type of CNC machine has its own strengths. Use the links
+            below to learn more about each one and where it shows up in
+            aerospace manufacturing.
+          </p>
+          <ul>
+            <li>
+              <a href="milling.html" title="CNC milling"><b>CNC Milling</b></a>
+              <ul>
+                <li>
+                  Spinning cutters carve pockets, slots, and contours into
+                  plate and block. Used for structural parts like wing ribs
+                  and bulkheads.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="turning.html" title="CNC turning"
+                ><b>CNC Turning (Lathe)</b></a
+              >
+              <ul>
+                <li>
+                  The part spins against a stationary tool to make round
+                  parts like shafts, pins, bushings, and hydraulic fittings.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="fiveaxis.html" title="5-axis machining"
+                ><b>5-Axis Machining</b></a
+              >
+              <ul>
+                <li>
+                  Adds two rotary axes so the tool can reach complex curved
+                  surfaces like turbine blades and impellers.
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3>CNC timeline</h3>
+          <ol>
+            <li>
+              <b>1949</b>: The U.S. Air Force funds John T. Parsons to develop
+              a numerically controlled machine for making aircraft parts
+            </li>
+            <li>
+              <b>1952</b>: MIT&rsquo;s Servomechanisms Laboratory demonstrates
+              the first NC milling machine
+            </li>
+            <li>
+              <b>1959</b>: MIT announces APT, a programming language for
+              machine tools
+            </li>
+            <li>
+              <b>1970s</b>: Computers replace punched tape and NC machines
+              become CNC machines
+            </li>
+            <li>
+              <b>1977</b>: Dassault begins developing the CAD software that
+              becomes CATIA, originally to design fighter jets
+            </li>
+            <li>
+              <b>1980</b>: The RS-274-D standard for G-code is published
+            </li>
+            <li>
+              <b>1999</b>: The AS9100 aerospace quality standard is released
+            </li>
+            <li>
+              <b>2010s</b>: 5-axis and mill-turn machines become common in
+              aerospace shops
+            </li>
+          </ol>
+        </section>
+      </article>
+    </main>
+    <footer role="contentinfo">
+      <p>
+        <a href="https://www.csun.edu" title="CSUN Website" target="_blank" rel="noopener noreferrer">CSUN</a>
+        18111 Nordhoff St Northridge, CA 91330
+      </p>
+      <p>CIT 384 &ndash; Project 1</p>
+    </footer>
+  </body>
+</html>

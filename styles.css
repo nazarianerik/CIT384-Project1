@@ -1,0 +1,172 @@
+/* CIT 384 - Project 1 - CNC Machining for Aerospace */
+html, body {
+	background: #2e3b48; /* Gunmetal */
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin: 0;
+	padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+	color: rgb(34, 60, 90);
+}
+body {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 100%;
+	width: 75%;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 2% 3% 0;
+	background: white;
+	line-height: 1.7;
+}
+h1 {
+	font: 1.4em Tahoma, Geneva, sans-serif;
+	text-transform: uppercase;
+	letter-spacing: .15em;
+	margin-bottom: .3em;
+	color: rgb(201, 111, 29);
+}
+h2 {
+	font: 3em "Trebuchet MS", Helvetica, sans-serif;
+	font-weight: bold;
+	margin-bottom: .2em;
+}
+h3 {
+	font-size: 1.4em;
+	margin-top: 1.2em;
+	margin-bottom: .4em;
+}
+h4 {
+	font-size: 1.1em;
+	color: rgb(30, 90, 168);
+}
+p {
+	margin-bottom: 1em;
+}
+li {
+	margin-bottom: .4em;
+}
+a {
+	color: rgb(30, 90, 168);
+}
+a:hover {
+	color: rgb(201, 111, 29);
+}
+header h2 {
+	padding-bottom: .2em;
+	border-bottom: 3px solid #C96F1D;
+}
+/* nav links sit in one row under the page title */
+nav ul {
+	margin: 0 0 1em;
+	padding: 0;
+	list-style: none;
+}
+nav li {
+	display: inline;
+	margin-right: 1.5em;
+}
+nav a {
+	text-decoration: none;
+	font-weight: bold;
+}
+nav a.current {
+	color: rgb(201, 111, 29);
+	border-bottom: 2px solid #C96F1D;
+}
+/* keeps floated images inside their section */
+article > header, section {
+	overflow: auto;
+}
+pre {
+	font-size: 1.1em;
+	color: #d6f5d0;
+	padding: .5em 1em;
+	border-left: 1em solid #C96F1D;
+	background: #3a4550;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	width: 75%;
+}
+aside {
+	clear: both;
+	padding: 1em;
+	background: rgb(34, 60, 90);
+	color: white;
+	margin-bottom: 1em;
+}
+aside h4 {
+	color: white;
+}
+aside p {
+	margin-bottom: 0;
+}
+/* gray box shows where each photo goes until it is added */
+img {
+	background: #dde2e7;
+	border: 1px solid #99a4af;
+}
+.floatRight {
+	float: right;
+	margin: 0 0 10px 15px;
+}
+.floatLeft {
+	float: left;
+	margin: 0 15px 10px 0;
+}
+/* fact card that uses <slot> on index.html */
+.factCard {
+	clear: both;
+	margin-bottom: 1em;
+}
+.factCard p {
+	margin-bottom: 0;
+}
+/* quote form on fiveaxis.html */
+.quoteForm {
+	padding: 1em 1.5em;
+	background: #eef1f4;
+	border-left: 1em solid rgb(34, 60, 90);
+}
+.quoteForm label {
+	display: block;
+	font-weight: bold;
+	color: rgb(34, 60, 90);
+}
+.quoteForm input[type="text"], .quoteForm input[type="email"] {
+	width: 20em;
+	padding: .3em;
+	font-size: 1em;
+}
+.quoteForm input[type="number"] {
+	width: 5em;
+	padding: .3em;
+	font-size: 1em;
+}
+/* no width here so the cols attribute sets the size */
+.quoteForm textarea {
+	padding: .3em;
+	font: 1em Tahoma, Geneva, sans-serif;
+}
+.quoteForm input[type="submit"] {
+	padding: .5em 1.5em;
+	font-size: 1em;
+	color: white;
+	background: rgb(34, 60, 90);
+	border: none;
+	cursor: pointer;
+}
+.quoteForm input[type="submit"]:hover {
+	background: rgb(201, 111, 29);
+}
+footer {
+	border-top: 1px solid gray;
+	text-align: center;
+	font-size: .8em;
+	line-height: 3em;
+	margin-top: 1em;
+}
+footer p {
+	margin-bottom: 0;
+}
